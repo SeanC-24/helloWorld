@@ -1,0 +1,32 @@
+/* color was added to each paragraph to add uniqueness to my web page about me*/
+p {
+        color: darkgreen;
+
+}
+
+#bigger {
+        font-size: 1.25em;
+}
+
+h2 {
+        color: deepskyblue;
+        text-align: center;
+}
+/* border was added to divide each class I took to clearly define the semester that class was taken*/
+table, td, th {
+        border-style: solid;
+        border-width: medium;
+        border-color: darkred;
+        border-collapse: collapse;
+}
+
+#para3 {
+        color: blueviolet;
+        font-family: cursive;
+}
+/* adjusted size of the Smith logo to better contort to my web page in the manner that I like*/
+#logo {
+        height: 150px;
+        width: 450px ;
+}
+
