@@ -1,0 +1,68 @@
+<!-- Using the parent template and extending it to the child-->
+{% extends "base.html" %}
+<!-- creating a title and heading to indicate that this form is a contact form-->
+{% block page_title %}
+   Contact
+{% endblock %}
+{% block page_head %}
+   <h1>Contact Form</h1>
+{% endblock %}
+
+{% block page_content %}
+    <!-- indicating what will be done if the form is submitted, there will be a page that shows exactly what the user inputted such as Name, Email, and Phone Number-->
+    {% if form_submitted %}
+        <div class="col-12">
+            <h3>Thank you for completing our contact form!</h3>
+        </div>
+          <div class = "col-md-6">
+            <p>First Name:</p>
+        </div>
+        <div class = "col-md-6">
+            <p>{{ request.form.get('first_name')}}</p>
+        </div>
+          <div class = "col-md-6">
+            <p>Last Name:</p>
+        </div>
+        <div class = "col-md-6">
+            <p>{{ request.form.get('last_name')}}</p>
+        </div>
+        <div class = "col-md-6">
+            <p>Email Address:</p>
+        </div>
+        <div class = "col-md-6">
+            <p>{{ request.form.get('email')}}</p>
+        </div>
+        <div class = "col-md-6">
+            <p>Phone Number:</p>
+        </div>
+        <div class = "col-md-6">
+            <p>{{ request.form.get('phone_number')}}</p>
+        </div>
+
+<!-- This indicates if nothing is submitted then the form will remain as is -->
+    {% else %}
+        <form class="m-3" action="{{ url_for('contact') }}" method="post">
+         <div class="mb-3">
+              <label for="first_name" class="form-label">First Name:</label>
+              <input type="text" class="form-control" id="first_name" name="first_name" >
+          </div>
+          <div class="mb-3">
+              <label for="last_name" class="form-label">Last Name:</label>
+              <input type="text" class="form-control" id="last_name" name="last_name" >
+          </div>
+          <div class="mb-3">
+              <label for="email" class="form-label">Email Address:</label>
+              <input type="email" class="form-control" id="email" name="email" aria-describedby="email">
+          </div>
+          <div class="mb-3">
+    <label for="phone_number" class="form-label">Phone Number</label>
+    <input type="tel" class="form-control" id="phone_number" name="phone_number">
+  </div>
+
+
+          <button type="submit" class="btn btn-primary mt-3">Submit your contact info!</button>
+        </form>
+    {% endif %}
+
+{% endblock %}
+

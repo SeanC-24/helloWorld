@@ -1,0 +1,13 @@
+<!-- Using the parent template and extending it to the child-->
+{% extends "base.html" %}
+<!-- Providing a specific title to indicate that this is my favorite course page-->
+{% block page_title %}
+  Favorite Course
+{% endblock %}
+{% block page_head %}
+    <h1>Favorite UMD Course</h1>
+{% endblock %}
+{% block page_content %}
+    <!-- Allowing the user to enter their favorite umd course-->
+<p> You entered your favorite course as: {{ course}} {{course_number }}</p>
+{% endblock %}
